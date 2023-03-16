@@ -81,3 +81,20 @@ function removeAdd(){
 
 let btn = document.getElementById("buttonClick");
 btn.addEventListener('click', removeAdd)
+
+
+/* Check if it is a leap year */
+
+function checkLeapYear(){
+    let year = document.getElementById('yearValue').value
+    let outputYear = document.getElementById('outputYear')
+
+    if(year % 4 ===0 && !year % 100 === 0){ 
+        outputYear.textContent = `${year} is a Leap year`
+    } else {
+        outputYear.textContent = `${year} is not a Leap year`
+    }
+}
+
+let btnCheckLeapYear = document.getElementById('buttonClickYear')
+btnCheckLeapYear.addEventListener('click', checkLeapYear)
