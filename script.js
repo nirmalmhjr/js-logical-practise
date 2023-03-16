@@ -1,4 +1,5 @@
 
+
 // let date = new Date();
 
 let months = ['January','February','March','April','May','June','July','August','September','October','November','December']
@@ -56,3 +57,27 @@ function differentFormatOutput(){
 }
 
 differentFormatOutput()
+
+/*  program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front */
+
+// let stringValue  = document.getElementById('string').value
+// console.log(stringValue);
+
+
+function removeAdd(){
+    let string = document.getElementById('stringValue').value
+    let output = document.getElementById('output')
+    
+    let lastString = string[string.length-1]
+    console.log(lastString);
+    
+    let updatedString = lastString + string.substring(0,string.length-1)
+    
+    console.log(updatedString);
+    
+    output.textContent = updatedString
+
+} 
+
+let btn = document.getElementById("buttonClick");
+btn.addEventListener('click', removeAdd)
