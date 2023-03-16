@@ -36,3 +36,23 @@ function currentDate () {
 setInterval(()=>{
     currentDate()
 },1000)
+
+/* Print current Window */
+function printCurrentWindow(){
+    window.print()
+}
+/* Expected Output : mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy */
+let activeDate_2 = document.querySelector(".activeDate2");
+
+function differentFormatOutput(){
+    let date = new Date()
+    let year = date.getFullYear()
+    let month =date.getMonth()
+    let day = date.getDay()
+
+    activeDate_2.textContent = `${month}-${day}-${year}, ${month}/${day}/${year}
+    ${day}-${month}-${year} , ${day}/${month}/${year}`
+
+}
+
+differentFormatOutput()
