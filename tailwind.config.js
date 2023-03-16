@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html'],
+  content: ["./*.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        regalBlue: "#243c5a",
+        capriBlue: "#1b5583",
+      },
+    },
   },
   plugins: [],
-}
+};
