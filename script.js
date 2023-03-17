@@ -89,7 +89,7 @@ function checkLeapYear(){
     let year = document.getElementById('yearValue').value
     let outputYear = document.getElementById('outputYear')
 
-    if(year % 4 ===0 && !year % 100 === 0){ 
+    if(year % 4 ===0 && !year % 100 === 0 || year % 400 === 0){ 
         outputYear.textContent = `${year} is a Leap year`
     } else {
         outputYear.textContent = `${year} is not a Leap year`
@@ -97,4 +97,21 @@ function checkLeapYear(){
 }
 
 let btnCheckLeapYear = document.getElementById('buttonClickYear')
-btnCheckLeapYear.addEventListener('click', checkLeapYear)
+btnCheckLeapYear.addEventListener("click", checkLeapYear);
+
+
+/* find which 1st January is being a Sunday between 2014 and 2050. */
+
+let findSunday=()=>{
+
+    for(let year = 2014; year <=2050;year++){
+        let date = new Date(year,0,1)
+        
+        if(date.getDay() ===1){
+            console.log(`${year}'s 1st January is Sunday  `);
+        }
+    }
+}
+
+findSunday()
+
