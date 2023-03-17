@@ -115,3 +115,18 @@ let findSunday=()=>{
 
 findSunday()
 
+/* Guess number  between 1 to 10 */
+function guessNumber(){
+    let randomNumber =  Math.floor(Math.random()*(10+1))
+
+    let guess = document.getElementById('guessValue').value
+    let guessResult = document.getElementById('guessAnswer')
+    if(guess == randomNumber){
+        guessResult.textContent = 'Correct Guess '
+    }  else {
+        guessResult.textContent = 'Better Luck next time'
+    }
+}
+
+let guessClick = document.getElementById('guessClick')
+guessClick.addEventListener('click',guessNumber)
