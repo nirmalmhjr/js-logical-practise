@@ -130,3 +130,28 @@ function guessNumber(){
 
 let guessClick = document.getElementById('guessClick')
 guessClick.addEventListener('click',guessNumber)
+
+/*  calculate days left until next Christmas */
+
+function daysToChristmas(){
+let today = new Date()
+let christmasDate = new Date(today.getFullYear(), 11,25)
+
+// 1000 miliseconds in a second*60 sec*60 minutes*24 hours
+let oneDay = 1000*60*60*24
+
+if(today.getMonth ==11 && today.getDate >25){
+    christmasDate.setFullYear(today.getFullYear()+1)
+}
+
+let daysToChristmas = Math.ceil(
+  (christmasDate.getTime() - today.getTime()) / oneDay
+);
+
+console.log(daysToChristmas);
+}
+
+daysToChristmas()
+
+
+/*  */
