@@ -177,3 +177,12 @@ function celciusToFarenheit(temp) {
   console.log(`${farenheitTemp} degree Farenheit`);
 }
 celciusToFarenheit(60)
+
+
+/* Get the website URL (loading page) */
+
+function getUrl(){
+    alert(document.URL)
+}
+
+getUrl()
