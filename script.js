@@ -185,4 +185,107 @@ function getUrl(){
     alert(document.URL)
 }
 
-getUrl()
+// getUrl()
+
+//diff between given number
+
+function diffBetween13(number){
+    let diff = number - 13
+
+    console.log(diff);
+    if(number > 13){
+        console.log(diff * 2);
+    }
+
+}
+
+// diffBetween13(20)
+
+/* Compute the sum of the two given integers */
+function sumTriple(x,y){
+    if(x==y){
+        return 3* (x+y)
+    } else{
+        return x + y
+    }
+}
+
+// console.log(sumTriple(2,3));
+// console.log(sumTriple(2,2));
+
+/* check whether a given positive number is a multiple of 3 or a multiple of 7 */
+function checkNumber(number){
+    if(number%3==0){
+        return `${number} is divisble of 3`
+    } else if(number%7==0){
+        return`${number} is divisible of 7`
+    } else {
+        return 'yet to divide'
+    }
+}
+
+// console.log(checkNumber(21))
+
+/* create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more. */
+
+function addFrontBack(text){
+    let backText;
+    let newText;
+    if(text.length >=3){
+        backText = text.substring(3)
+        newText = backText + text + backText
+        }
+
+    console.log(newText);  
+}
+// addFrontBack('string');
+
+// nearest to 100 from two different given integer values
+    function nearestTo100(num1,num2){
+        let num1Diff = 100 - num1
+        let num2Diff = 100 -num2
+
+        if(num2Diff > num1Diff){
+            return `${num1} is closest to 100`
+        } else {
+            return `${num2} is closest to 100`;
+        }
+    }
+
+    // console.log(nearestTo100(50,60));
+    // console.log(nearestTo100(22,34));
+    // console.log(nearestTo100(22,-1034));
+
+
+
+/*  Replace every character in a given string with the character following it in the alphabet */
+// function string_reverse(str)
+function LetterChanges(text){
+    let s = text.split('')
+    
+    for(let i =0; i<s.length; i++){
+        //ceasar cipher
+        switch(s[i]){
+            case ' ':
+                break;
+            case 'z':
+                s[i]='a'
+                break
+            case 'Z':
+                s[i] = 'A';
+                break;
+            default:
+                s[i]= String.fromCharCode(1 + s[i].charCodeAt(0))
+        }
+
+        //Upper-case vowels
+            switch(s[i]){
+                case 'a': case'e' : case 'i': case 'o': case 'u':
+                    s[i] = s[i].toUpperCase()
+            }
+    }
+        return s.join('');
+}
+
+console.log(LetterChanges('thdc'));
+
