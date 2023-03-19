@@ -151,7 +151,29 @@ let daysToChristmas = Math.ceil(
 console.log(daysToChristmas);
 }
 
-daysToChristmas()
+// daysToChristmas()
 
 
-/*  */
+/* celsius to Farenheit Formula : c/5 = (f-32)/9 
+
+*/
+
+function farenheitToCelcius(temp){
+    let farenheitTemp = temp;
+
+    let celciusTemp = (farenheitTemp -32)*(5/9)
+
+    console.log(`${celciusTemp} degree Celcius`);
+
+}
+
+farenheitToCelcius(140)
+
+function celciusToFarenheit(temp) {
+  let celciusTemp = temp;
+
+  let farenheitTemp = celciusTemp *(9/5) +32
+
+  console.log(`${farenheitTemp} degree Farenheit`);
+}
+celciusToFarenheit(60)

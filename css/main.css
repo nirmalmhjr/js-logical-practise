@@ -543,6 +543,10 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -573,6 +577,18 @@ video {
 
 .w-60 {
   width: 15rem;
+}
+
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .justify-center {
