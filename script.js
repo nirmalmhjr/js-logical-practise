@@ -163,7 +163,7 @@ function farenheitToCelcius(temp){
 
     let celciusTemp = (farenheitTemp -32)*(5/9)
 
-    console.log(`${celciusTemp} degree Celcius`);
+    // console.log(`${celciusTemp} degree Celcius`);
 
 }
 
@@ -174,7 +174,7 @@ function celciusToFarenheit(temp) {
 
   let farenheitTemp = celciusTemp *(9/5) +32
 
-  console.log(`${farenheitTemp} degree Farenheit`);
+//   console.log(`${farenheitTemp} degree Farenheit`);
 }
 celciusToFarenheit(60)
 
@@ -312,8 +312,8 @@ function add_two_int_without_carrying(n1,n2){
 
 }
 
-console.log(add_two_int_without_carrying(456,854));
-console.log(add_two_int_without_carrying(2,12));
+// console.log(add_two_int_without_carrying(456,854));
+// console.log(add_two_int_without_carrying(2,12));
 
 function xSum(n,m){
 let result =0
@@ -336,8 +336,8 @@ multiplier *= 10
     return result
 }
 
-console.log(xSum(456 , 854 ));
-console.log(xSum(2 , 12 ));
+// console.log(xSum(456 , 854 ));
+// console.log(xSum(2 , 12 ));
 
 
 /* q */
@@ -365,11 +365,11 @@ function longestString(array){
     return array[maxIndex]
 }
 
-console.log(longestString(fruits));
+// console.log(longestString(fruits));
 
 let carBrands = ['Toyota','Suzuki','Mercedez','Bentley','Bugati','Mahindra','Hyundai','Datsun','Kia']
 
-console.log(longestString(carBrands));
+// console.log(longestString(carBrands));
 
 function longest_string(array){
     let max = array[0].length
@@ -379,4 +379,27 @@ function longest_string(array){
 
 }
 
-console.log(longest_string(fruits));
+// console.log(longest_string(fruits));
+
+/*  replace each character of a given string by the next one in the English alphabet */
+
+function replaceStringByNextOne(word){
+    let string = word.split('')
+    for(let i=0;i<string.length;i++){
+        switch(string[i]){
+            case('z'):
+                string[i] = "a";
+            break
+            case('Z'):
+                string[i] = "A";
+            break
+            default:
+            string[i]=String.fromCharCode(1 + string[i].charCodeAt());
+
+        }
+    }
+    return string.join('')
+}
+
+console.log(replaceStringByNextOne("nirmal"));
+
