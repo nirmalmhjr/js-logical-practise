@@ -338,3 +338,45 @@ multiplier *= 10
 
 console.log(xSum(456 , 854 ));
 console.log(xSum(2 , 12 ));
+
+
+/* q */
+
+let fruits = ['apple','orange','banana','Mango','Dragon Fruit']
+
+function longestString(array){
+    let arrayLength = []
+
+    for(let i = 0; i< array.length;i++){
+        arrayLength.push(array[i].length)
+    }
+    
+    let max= arrayLength[0]
+    let maxIndex= 0
+    
+    for(i=1;i<arrayLength.length;i++){
+        if(arrayLength[i] > max){
+            max= arrayLength[i]
+            maxIndex = i
+        }
+        
+    }
+    // console.log(max);
+    return array[maxIndex]
+}
+
+console.log(longestString(fruits));
+
+let carBrands = ['Toyota','Suzuki','Mercedez','Bentley','Bugati','Mahindra','Hyundai','Datsun','Kia']
+
+console.log(longestString(carBrands));
+
+function longest_string(array){
+    let max = array[0].length
+    array.map(array => max = Math.max(max, array.length))
+    result = array.filter(v=> v.length == max)    
+    return result
+
+}
+
+console.log(longest_string(fruits));
