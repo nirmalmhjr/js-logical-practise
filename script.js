@@ -275,7 +275,8 @@ function LetterChanges(text){
                 s[i] = 'A';
                 break;
             default:
-                s[i]= String.fromCharCode(1 + s[i].charCodeAt(0))
+                // s[i]= String.fromCharCode(1 + s[i].charCodeAt(0))
+                s[i]= console.log(String.fromCharCode(1 + s[i].charCodeAt(0)));
         }
 
         //Upper-case vowels
@@ -287,5 +288,53 @@ function LetterChanges(text){
         return s.join('');
 }
 
-console.log(LetterChanges('thdc'));
+// console.log(LetterChanges('thdc12'));
 
+/* Add two positive integers without carry */
+
+function add_two_int_without_carrying(n1,n2){
+    let result=0;
+    let multiplier =1
+
+    while (n1|| n2){
+        let bit_sum = (n1%10 + n2%10) % 10
+
+        result = multiplier * bit_sum + result;
+
+        // n1 = Math.floor(n1/10)
+        // n2 = Math.floor(n2/10)
+        n1 = parseInt(n1/10)
+        n2 = parseInt(n2/10)
+
+        multiplier*=10;
+    }
+    return result
+
+}
+
+console.log(add_two_int_without_carrying(456,854));
+console.log(add_two_int_without_carrying(2,12));
+
+function xSum(n,m){
+let result =0
+
+let multiplier = 1
+
+while(n||m){
+let bit_sum = (n % 10) + (m % 10);
+
+//to remove modulus of bit_sum
+bit_sum %= 10;
+
+result = bit_sum * multiplier + result;
+
+n = parseInt(n / 10);
+m = parseInt(m / 10);
+
+multiplier *= 10
+}
+    return result
+}
+
+console.log(xSum(456 , 854 ));
+console.log(xSum(2 , 12 ));
