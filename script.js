@@ -448,8 +448,8 @@ function array_max_consecutive_diff(nums) {
     return result
 }
 
-console.log(array_max_consecutive_diff([1, 2, 3, 8, 9]));
-console.log(array_max_consecutive_diff([1, 2, 3, 14, 5]));
+// console.log(array_max_consecutive_diff([1, 2, 3, 8, 9]));
+// console.log(array_max_consecutive_diff([1, 2, 3, 14, 5]));
 
 function array_max_consecutive_diff_2(nums){
     let max = -1
@@ -462,5 +462,60 @@ function array_max_consecutive_diff_2(nums){
     return max
 }
 
-console.log(array_max_consecutive_diff_2([1, 2, 3, 8, 9]));
-console.log(array_max_consecutive_diff_2([1, 2, 3, 14, 5]));
+// console.log(array_max_consecutive_diff_2([1, 2, 3, 8, 9]));
+// console.log(array_max_consecutive_diff_2([1, 2, 3, 14, 5]));
+
+
+/* find the number which appears most in a given array of integers */
+function array_repeat_mode(array){
+    // without sort
+
+    let maxCount = 0
+    let element_having_max_freq 
+
+    for (let i = 0; i < array.length; i++) {
+        let count = 0;
+        for(j=i;j<array.length;j++){
+            if(arr[i]==arr[j]){
+                count++
+                // console.log('At',i, 'count is ',count);
+            }
+        }
+        if(count > maxCount){
+            maxCount = count
+            // console.log('max count =', maxCount);
+            element_having_max_freq = array[i]
+        }
+
+            
+        }
+        console.log(element_having_max_freq);
+    }
+
+
+
+let arr = [10, 20, 10, 20, 30, 20, 20]
+
+console.log(array_repeat_mode(arr));
+
+function array_repeat_mode_2(array){
+//first sort the array so that compare with previous one
+    array.sort()
+
+    let count = 1
+    let max_count = 1
+    let most_frequent = array[0]
+
+    for (let i = 1; i < array.length; i++) {
+        if(array[i] == array[i-1]){
+            count++
+        }   else count =1
+        
+        if(count > max_count){
+            max_count = count
+            most_frequent = array[i]
+        }
+    }
+    return most_frequent
+}
+console.log(array_repeat_mode_2(arr));
