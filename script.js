@@ -401,5 +401,31 @@ function replaceStringByNextOne(word){
     return string.join('')
 }
 
-console.log(replaceStringByNextOne("nirmal"));
+// console.log(replaceStringByNextOne("nirmal"));
 
+/* find the kth greatest element of a given array of integers */
+
+function array_max_consecutive_sum(nums, k){
+    let temp_sum = 0
+    let result = 0;
+
+    for(let i=0; i<k-1 ;i++){
+        temp_sum += nums[i]
+    }
+
+    for(let i=k-1; i<nums.length;i++){
+        temp_sum += nums[i]
+
+        if(result < temp_sum){
+            result = temp_sum
+        }
+        temp_sum -= nums[i-k+1]
+
+    }
+    return result
+    }
+
+console.log(array_max_consecutive_sum([1, 2, 3, 14, 5], 2));
+console.log(array_max_consecutive_sum([1, 2, 3, 14, 5,16,20,1], 3));
+console.log(array_max_consecutive_sum([2, 3, 5, 1, 6], 3));
+console.log(array_max_consecutive_sum([9, 3, 5, 1, 7], 2));
