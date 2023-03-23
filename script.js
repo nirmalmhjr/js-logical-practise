@@ -425,7 +425,42 @@ function array_max_consecutive_sum(nums, k){
     return result
     }
 
-console.log(array_max_consecutive_sum([1, 2, 3, 14, 5], 2));
-console.log(array_max_consecutive_sum([1, 2, 3, 14, 5,16,20,1], 3));
-console.log(array_max_consecutive_sum([2, 3, 5, 1, 6], 3));
-console.log(array_max_consecutive_sum([9, 3, 5, 1, 7], 2));
+// console.log(array_max_consecutive_sum([1, 2, 3, 14, 5], 2));
+// console.log(array_max_consecutive_sum([1, 2, 3, 14, 5,16,20,1], 3));
+// console.log(array_max_consecutive_sum([2, 3, 5, 1, 6], 3));
+// console.log(array_max_consecutive_sum([9, 3, 5, 1, 7], 2));
+
+/* Find the maximum difference between any two adjacent elements of a given array of integers */
+function array_max_consecutive_diff(nums) {
+    let diff = nums[0]
+    let result = 0
+
+    for(let i=1; i<nums.length;i++){
+        diff -= nums[i]
+        
+        diffPositive = Math.abs(diff)
+        if(result< diffPositive){
+            result = diffPositive
+        }
+        diffPositive += nums[i-1]
+        diff = diffPositive
+    }
+    return result
+}
+
+console.log(array_max_consecutive_diff([1, 2, 3, 8, 9]));
+console.log(array_max_consecutive_diff([1, 2, 3, 14, 5]));
+
+function array_max_consecutive_diff_2(nums){
+    let max = -1
+    let temp = 0
+
+    for (let i = 0; i < nums.length-1; i++) {
+        temp = Math.abs(nums[i] - nums[i+1])
+        max = Math.max(max, temp)
+    }
+    return max
+}
+
+console.log(array_max_consecutive_diff_2([1, 2, 3, 8, 9]));
+console.log(array_max_consecutive_diff_2([1, 2, 3, 14, 5]));
