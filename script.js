@@ -543,3 +543,23 @@ return array
 }
 
 console.log(array_element_replace_2([1,2,3,2,2,8,1,9],2,15));
+
+/* compute the sum of absolute differences of consecutive numbers of a given array of integers */
+    function array_max_consecutive_sum(array){
+        let diff;
+        let diff_sum =0;
+
+        for (let i = 1; i < array.length; i++) {
+            diff = Math.abs(array[i] - array[i-1])
+            diff_sum += diff
+        }
+    return diff_sum
+    }
+
+
+
+
+
+console.log(array_max_consecutive_sum([1, 2, 3, 14, 5]));
+console.log(array_max_consecutive_sum([1, 2, 3, 2, -5]));
+// console.log(array_max_consecutive_sum([1, 2, 3, 14, 5,16,20,1], 3));
