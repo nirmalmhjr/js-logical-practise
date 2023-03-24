@@ -494,13 +494,14 @@ function array_repeat_mode(array){
 
 
 
-let arr = [10, 20, 10, 20, 30, 20, 20]
+// let arr = [10, 20, 10, 20, 30, 20, 20]
 
-console.log(array_repeat_mode(arr));
+// console.log(array_repeat_mode(arr));
 
 function array_repeat_mode_2(array){
 //first sort the array so that compare with previous one
     array.sort()
+    console.log(array.sort());
 
     let count = 1
     let max_count = 1
@@ -518,4 +519,27 @@ function array_repeat_mode_2(array){
     }
     return most_frequent
 }
-console.log(array_repeat_mode_2(arr));
+// console.log(array_repeat_mode_2(arr));
+
+/* replace all the numbers with a specified number of a given array of integers */
+function array_element_replace( array, n){
+    for (let i = 0; i < array.length; i++) {
+        let number_replace = array[n]
+        
+        array[i] = number_replace
+    }
+    return array
+}
+
+console.log(array_element_replace([1,2,3,2,2,8,1,9],7));
+
+function array_element_replace_2(array, current_num, new_number){
+for (let i = 0; i < array.length; i++) {
+    if(array[i] == current_num){
+        array[i] = new_number
+    }
+}
+return array
+}
+
+console.log(array_element_replace_2([1,2,3,2,2,8,1,9],2,15));
