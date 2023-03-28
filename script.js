@@ -531,7 +531,7 @@ function array_element_replace( array, n){
     return array
 }
 
-console.log(array_element_replace([1,2,3,2,2,8,1,9],7));
+// console.log(array_element_replace([1,2,3,2,2,8,1,9],7));
 
 function array_element_replace_2(array, current_num, new_number){
 for (let i = 0; i < array.length; i++) {
@@ -542,7 +542,7 @@ for (let i = 0; i < array.length; i++) {
 return array
 }
 
-console.log(array_element_replace_2([1,2,3,2,2,8,1,9],2,15));
+// console.log(array_element_replace_2([1,2,3,2,2,8,1,9],2,15));
 
 /* compute the sum of absolute differences of consecutive numbers of a given array of integers */
     function array_max_consecutive_sum(array){
@@ -560,6 +560,76 @@ console.log(array_element_replace_2([1,2,3,2,2,8,1,9],2,15));
 
 
 
-console.log(array_max_consecutive_sum([1, 2, 3, 14, 5]));
-console.log(array_max_consecutive_sum([1, 2, 3, 2, -5]));
+// console.log(array_max_consecutive_sum([1, 2, 3, 14, 5]));
+// console.log(array_max_consecutive_sum([1, 2, 3, 2, -5]));
 // console.log(array_max_consecutive_sum([1, 2, 3, 14, 5,16,20,1], 3));
+
+/* find the shortest possible string which can create a string to make it a palindrome by adding characters to the end of it */
+    //simple approach one    
+function check_palindrome_1(string){
+        let length = string.length
+
+        for(let i =0;i<(length/2);i++){
+            console.log(string[i]);
+            console.log(string[length - i -1]);
+            
+            if(string[i] !== string[length -i -1]){
+                alert('it is no palindrome')
+            }
+        }
+        return string
+    }
+    // for approaching by prompt
+    /* let string = prompt('enter a value')
+    let value = palindrome(string)
+    console.log(value); */
+
+    // approach 2 using bulit in function like split reverse join
+    function check_palindrome_2(string){
+        //1st split into array , then reverse array and join
+        let reversedString= string.split('').reverse().join('')
+
+        let result
+        if(string == reversedString){
+            return result = `${true} this is palindrome` 
+        }   else {
+            return result = `${false} this is not palindrome` 
+        }
+
+    }
+
+// console.log(check_palindrome_2('12321'));
+
+//approach 3 to  number
+function check_palindrome_3(string){
+    let palindrome
+    
+    for (let i = 0; i < Math.floor(string.length/2); i++) {
+        if(string[i] == string[string.length - i -1]){
+            palindrome = true
+        } else palindrome = false
+     
+        if(!palindrome){
+            for(j=string.length;j<i;j++){
+            console.log(string[j]);
+            console.log(string[string.length - j -1]);
+            string+= string[i-j-1]
+                
+            }
+ 
+            // console.log(string[i]);
+            // console.log(string[string.length - i -1]);
+
+            string[string.length -i-1] = string[i]
+        }
+        console.log(string);
+    }
+    return palindrome
+
+}
+
+// console.log(check_palindrome_3(12321));
+check_palindrome_3('12345')
+console.log(check_palindrome_3('12345'));
+
+
